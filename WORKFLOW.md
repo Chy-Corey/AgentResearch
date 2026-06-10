@@ -8,9 +8,10 @@
 
 ### 1.1 完善评估标准
 
-- [ ] 明确各评估维度的权重分配
-- [ ] 定义 5 分制评分的具体标准
-- [ ] 确定各维度的子维度和评估要点
+- [x] 明确各评估维度的权重分配（7个维度）
+- [x] 定义 5 分制评分标准（2=完成 / 1=有瑕疵 / 0=失败）
+- [x] 制定各维度量化方法（架构设计、核心能力、技术实现、交互体验、安全机制、可扩展性、社区活跃度）
+- [x] 设计核心能力 15 个统一测试任务（R1-R5, A1-A5, E1-E5）
 - 📄 文件：[methodology/evaluation-criteria.md](methodology/evaluation-criteria.md)
 
 ### 1.2 收集资料
@@ -19,6 +20,8 @@
 - [ ] 收集 Codex 官方仓库、文档链接
 - [ ] 收集 Hermes 官方仓库、文档链接
 - [ ] 收集 OpenClaw 官方仓库、文档链接
+- [ ] 收集各 Agent 的 GitHub 指标（Star、Fork、Issue 活跃度、贡献者数量）
+- [ ] 收集各 Agent 的社区生态信息（第三方集成、社区内容、版本发布频率）
 - [ ] 收集相关论文和技术博客
 - 📄 文件：[references/links.md](references/links.md)、[references/papers.md](references/papers.md)
 
@@ -55,8 +58,8 @@
 
 - [ ] 分析整体架构与模块划分
 - [ ] 分析数据流与状态管理
-- [ ] 评估代码生成、代码理解、多文件编辑等核心能力
-- [ ] 分析上下文管理与工具调用机制
+- [ ] 执行核心能力测试（R1-R5 推理层、A1-A5 行动层、E1-E5 整体执行）
+- [ ] 记录 15 个任务的得分，填写结果记录表
 - 📄 文件：[architecture.md](agents/claude-code/architecture.md)、[core-capabilities.md](agents/claude-code/core-capabilities.md)
 
 ### 2.4 技术实现分析
@@ -88,7 +91,7 @@
 
 - [ ] 3.1 基础信息 → [README.md](agents/codex/README.md)
 - [ ] 3.2 源码分析 → [source-code/](agents/codex/source-code/)
-- [ ] 3.3 架构与能力 → [architecture.md](agents/codex/architecture.md)、[core-capabilities.md](agents/codex/core-capabilities.md)
+- [ ] 3.3 架构与能力 + 核心能力测试（R1-R5, A1-A5, E1-E5） → [architecture.md](agents/codex/architecture.md)、[core-capabilities.md](agents/codex/core-capabilities.md)
 - [ ] 3.4 技术实现 → [tech-implementation.md](agents/codex/tech-implementation.md)
 - [ ] 3.5 交互与安全 → [interaction-design.md](agents/codex/interaction-design.md)、[security-model.md](agents/codex/security-model.md)
 - [ ] 3.6 可扩展性与总结 → [extensibility.md](agents/codex/extensibility.md)、[pros-cons.md](agents/codex/pros-cons.md)
@@ -99,7 +102,7 @@
 
 - [ ] 4.1 基础信息 → [README.md](agents/hermes/README.md)
 - [ ] 4.2 源码分析 → [source-code/](agents/hermes/source-code/)
-- [ ] 4.3 架构与能力 → [architecture.md](agents/hermes/architecture.md)、[core-capabilities.md](agents/hermes/core-capabilities.md)
+- [ ] 4.3 架构与能力 + 核心能力测试（R1-R5, A1-A5, E1-E5） → [architecture.md](agents/hermes/architecture.md)、[core-capabilities.md](agents/hermes/core-capabilities.md)
 - [ ] 4.4 技术实现 → [tech-implementation.md](agents/hermes/tech-implementation.md)
 - [ ] 4.5 交互与安全 → [interaction-design.md](agents/hermes/interaction-design.md)、[security-model.md](agents/hermes/security-model.md)
 - [ ] 4.6 可扩展性与总结 → [extensibility.md](agents/hermes/extensibility.md)、[pros-cons.md](agents/hermes/pros-cons.md)
@@ -110,7 +113,7 @@
 
 - [ ] 5.1 基础信息 → [README.md](agents/openclaw/README.md)
 - [ ] 5.2 源码分析 → [source-code/](agents/openclaw/source-code/)
-- [ ] 5.3 架构与能力 → [architecture.md](agents/openclaw/architecture.md)、[core-capabilities.md](agents/openclaw/core-capabilities.md)
+- [ ] 5.3 架构与能力 + 核心能力测试（R1-R5, A1-A5, E1-E5） → [architecture.md](agents/openclaw/architecture.md)、[core-capabilities.md](agents/openclaw/core-capabilities.md)
 - [ ] 5.4 技术实现 → [tech-implementation.md](agents/openclaw/tech-implementation.md)
 - [ ] 5.5 交互与安全 → [interaction-design.md](agents/openclaw/interaction-design.md)、[security-model.md](agents/openclaw/security-model.md)
 - [ ] 5.6 可扩展性与总结 → [extensibility.md](agents/openclaw/extensibility.md)、[pros-cons.md](agents/openclaw/pros-cons.md)
@@ -122,13 +125,12 @@
 > 四个 Agent 分析完成后，基于收集的数据进行横向对比。
 
 - [ ] 架构设计对比 → [overview/architecture-comparison.md](overview/architecture-comparison.md)
-- [ ] 核心能力对比 → [overview/capability-comparison.md](overview/capability-comparison.md)
+- [ ] 核心能力对比（汇总 15 个任务得分） → [overview/capability-comparison.md](overview/capability-comparison.md)
 - [ ] 技术实现对比 → [overview/tech-implementation-comparison.md](overview/tech-implementation-comparison.md)
-- [ ] 交互模式对比 → [overview/interaction-comparison.md](overview/interaction-comparison.md)
-- [ ] 性能表现对比 → [overview/performance-comparison.md](overview/performance-comparison.md)
+- [ ] 交互体验对比 → [overview/interaction-comparison.md](overview/interaction-comparison.md)
 - [ ] 安全机制对比 → [overview/security-comparison.md](overview/security-comparison.md)
 - [ ] 可扩展性对比 → [overview/extensibility-comparison.md](overview/extensibility-comparison.md)
-- [ ] 生态系统对比 → [overview/ecosystem-comparison.md](overview/ecosystem-comparison.md)
+- [ ] 社区活跃度对比 → [overview/ecosystem-comparison.md](overview/ecosystem-comparison.md)
 
 ---
 
@@ -145,7 +147,7 @@
 
 | 阶段 | 状态 | 备注 |
 |------|------|------|
-| 阶段一：基础准备 | 🔲 未开始 | |
+| 阶段一：基础准备 | 🔲 进行中 | |
 | 阶段二：Claude Code | 🔲 未开始 | |
 | 阶段三：Codex | 🔲 未开始 | |
 | 阶段四：Hermes | 🔲 未开始 | |
