@@ -40,19 +40,19 @@
 
 ### 2.1 基础信息
 
-- [ ] 填写基本信息表（开发者、仓库、文档、版本、许可证）
-- [ ] 明确产品定位与目标
-- [ ] 列出核心特性概览
+- [x] 填写基本信息表（开发者、仓库、文档、版本、许可证）
+- [x] 明确产品定位与目标
+- [x] 列出核心特性概览
 - 📄 文件：[agents/claude-code/README.md](agents/claude-code/README.md)
 
 ### 2.2 源码分析
 
-- [ ] 梳理项目目录结构，标注各目录作用
-- [ ] 定位 CLI 入口文件，梳理启动流程
-- [ ] 识别核心模块，分析模块职责与依赖关系
-- [ ] 提取关键算法和设计模式
-- [ ] 分析依赖选型的合理性
-- 📄 文件：[agents/claude-code/source-code/](agents/claude-code/source-code/)
+- [ ] 阶段一：项目结构概览 → [project-structure.md](agents/claude-code/source-code/project-structure.md)
+- [ ] 阶段二：入口与启动流程 → [entry-points.md](agents/claude-code/source-code/entry-points.md)
+- [ ] 阶段三：核心模块分析 → [core-modules.md](agents/claude-code/source-code/core-modules.md)
+- [ ] 阶段四：关键算法与设计模式 → [key-algorithms.md](agents/claude-code/source-code/key-algorithms.md)
+- [ ] 阶段五：依赖分析 → [dependency-analysis.md](agents/claude-code/source-code/dependency-analysis.md)
+- 📄 详细流程：[analysis-guide.md](agents/claude-code/source-code/analysis-guide.md)
 
 ### 2.3 架构与能力分析
 
