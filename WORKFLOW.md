@@ -20,10 +20,10 @@
 - [x] 收集 Codex 官方仓库、文档链接
 - [x] 收集 Hermes 官方仓库、文档链接
 - [x] 收集 OpenClaw 官方仓库、文档链接
-- [ ] 收集各 Agent 的 GitHub 指标（Star、Fork、Issue 活跃度、贡献者数量）
-- [ ] 收集各 Agent 的社区生态信息（第三方集成、社区内容、版本发布频率）
-- [ ] 收集相关论文和技术博客
-- 📄 文件：[references/links.md](references/links.md)、[references/papers.md](references/papers.md)
+- [x] 收集相关技术博客链接
+- [x] 收集各 Agent 的 GitHub 指标（Star、Fork、Issue 活跃度、贡献者数量）
+- [x] 收集各 Agent 的社区生态信息（第三方集成、社区内容）
+- 📄 文件：[references/links.md](references/links.md)、[references/community.md](references/community.md)
 
 ### 1.3 克隆源码
 

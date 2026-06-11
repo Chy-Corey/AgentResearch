@@ -82,6 +82,7 @@ AgentResearch/
 
 - [横向对比总览](overview/README.md) — 先看全局对比
 - [研究方法论](methodology/README.md) — 了解评估标准
+- [社区活跃度数据](references/community.md) — 各 Agent 的 GitHub 指标和社区生态
 - [术语表](references/glossary.md) — 查阅专业术语
 
 ### 各 Agent 深度分析
