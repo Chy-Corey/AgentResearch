@@ -306,27 +306,16 @@
 |------|------|----------|
 | Star 数 | 仓库 star 数量 | GitHub |
 | Fork 数 | 仓库 fork 数量 | GitHub |
-| Issue 活跃度 | open/closed issue 数量、平均响应时间 | GitHub |
-| PR 活跃度 | open/closed PR 数量、平均合并时间 | GitHub |
-| 贡献者数量 | 贡献者总数和活跃贡献者数量 | GitHub |
-| Commit 频率 | 近 3 个月的 commit 频率和趋势 | GitHub |
-
-### 生态指标
-
-| 指标 | 说明 | 数据来源 |
-|------|------|----------|
-| 文档完善度 | 官方文档的完整性和质量 | 官方文档 |
-| 第三方集成 | IDE 插件、CI/CD 集成等第三方工具数量 | 文档 + 社区 |
-| 社区内容 | 技术博客、教程、视频的数量和质量 | 搜索引擎 |
-| 使用门槛 | 安装步骤数、依赖复杂度、学习曲线 | 实际体验 |
+| Open Issue 数 | 当前未关闭的 issue 数量 | GitHub |
+| Closed Issue 数 | 已关闭的 issue 数量 | GitHub |
+| 贡献者数量 | 贡献者总数 | GitHub |
 
 ### 更新频率
 
 | 指标 | 说明 | 数据来源 |
 |------|------|----------|
-| 版本发布频率 | 近 6 个月的版本发布次数 | GitHub Releases |
-| Breaking Changes | 重大变更的频率和迁移成本 | Changelog |
-| 响应速度 | 从 issue 提出到修复的平均时间 | GitHub |
+| 版本发布次数 | 历史版本发布总次数 | GitHub Releases |
+| 最新版本号 | 当前最新版本号 | GitHub Releases |
 
 ## 评分标准
 
