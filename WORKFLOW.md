@@ -27,10 +27,10 @@
 
 ### 1.3 克隆源码
 
-- [ ] 克隆 Claude Code 源码到本地
-- [ ] 克隆 Codex 源码到本地
-- [ ] 克隆 Hermes 源码到本地
-- [ ] 克隆 OpenClaw 源码到本地
+- [x] 克隆 Claude Code 源码到本地
+- [x] 克隆 Codex 源码到本地
+- [x] 克隆 Hermes 源码到本地
+- [x] 克隆 OpenClaw 源码到本地
 
 ---
 
@@ -138,7 +138,6 @@
 
 - [ ] 撰写综合评价与结论 → [overview/summary.md](overview/summary.md)
 - [ ] 完善术语表 → [references/glossary.md](references/glossary.md)
-- [ ] 整理参考文献 → [references/papers.md](references/papers.md)
 - [ ] 最终审校与排版
 
 ---
