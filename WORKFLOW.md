@@ -47,8 +47,8 @@
 
 ### 2.2 源码分析
 
-- [ ] 阶段一：项目结构概览 → [project-structure.md](agents/claude-code/source-code/project-structure.md)
-- [ ] 阶段二：入口与启动流程 → [entry-points.md](agents/claude-code/source-code/entry-points.md)
+- [x] 阶段一：项目结构概览 → [project-structure.md](agents/claude-code/source-code/project-structure.md)
+- [x] 阶段二：入口与启动流程 → [entry-points.md](agents/claude-code/source-code/entry-points.md)
 - [ ] 阶段三：核心模块分析 → [core-modules.md](agents/claude-code/source-code/core-modules.md)
 - [ ] 阶段四：关键算法与设计模式 → [key-algorithms.md](agents/claude-code/source-code/key-algorithms.md)
 - [ ] 阶段五：依赖分析 → [dependency-analysis.md](agents/claude-code/source-code/dependency-analysis.md)
