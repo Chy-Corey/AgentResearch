@@ -1,4 +1,4 @@
-安逸：  # Claude Code — 核心模块分析
+# Claude Code — 核心模块分析
 
 本文档详细分析 Claude Code 的核心模块，帮助理解 Agent 的工作原理。
 
