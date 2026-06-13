@@ -8,15 +8,102 @@ bun run start        # → bun run ./src/dev-entry.ts
 bun run version      # → bun run ./src/dev-entry.ts --version
 ```
 
+## 命令执行流程
+
+以 `bun run dev --version` 为例：
+
+```
+bun run dev --version
+       ↓
+查找 package.json 的 scripts 字段
+       ↓
+scripts.dev = "bun run ./src/dev-entry.ts"
+       ↓
+实际执行：bun run ./src/dev-entry.ts --version
+       ↓
+dev-entry.ts 读取 process.argv = ["bun", "./src/dev-entry.ts", "--version"]
+       ↓
+const args = process.argv.slice(2)  →  args = ["--version"]
+       ↓
+匹配到 args.includes('--version')
+       ↓
+console.log(pkg.version)  →  输出版本号并退出
+```
+
+**关键点**：`bun run <script> <args>` 会自动把 `<args>` 透传给脚本的 `process.argv`，所以 `--version` 会出现在 `process.argv` 中。
+
 ## 启动链路
+
+以 `bun run dev`（交互式模式）为例，完整调用链如下：
 
 ```
 package.json scripts
-  → src/dev-entry.ts          # 开发入口：宏配置 + 缺失导入检测
-    → src/entrypoints/cli.tsx  # CLI 引导：快速路径分发
-      → src/main.tsx           # 主入口：完整 CLI 初始化
-        → src/replLauncher.tsx # REPL 启动：加载 App + REPL 组件
-          → src/screens/REPL   # 交互式 REPL 界面
+  → src/dev-entry.ts                    # 第1层：开发入口
+    → src/entrypoints/cli.tsx           # 第2层：CLI 引导
+      → src/main.tsx                    # 第3层：主入口
+        ├─ src/entrypoints/init.ts      # 第3.1层：核心初始化
+        ├─ src/tools.ts                 # 第3.2层：工具注册
+        ├─ src/commands.ts              # 第3.3层：命令注册
+        ├─ src/plugins/bundled/         # 第3.4层：插件初始化
+        └─ src/skills/bundled/          # 第3.5层：技能初始化
+        → src/replLauncher.tsx          # 第4层：REPL 启动
+          → src/components/App.tsx      # 第4.1层：App 外壳
+          → src/screens/REPL.tsx        # 第5层：交互式 REPL 界面
+```
+
+### 每一层做了什么
+
+| 层级 | 文件 | 职责 | 调用了谁 |
+|------|------|------|----------|
+| 入口 | `package.json` | 定义 `scripts.dev = "bun run ./src/dev-entry.ts"` | dev-entry.ts |
+| 第1层 | `dev-entry.ts` | 设置全局宏配置 MACRO、扫描缺失导入 | cli.tsx |
+| 第2层 | `cli.tsx` | 快速路径分发（12+ 个快速路径） | main.tsx |
+| 第3层 | `main.tsx` | Commander.js 参数解析、并行初始化 | init.ts、tools.ts 等 |
+| 3.1 | `init.ts` | 启用配置、设置代理、检测仓库、初始化遥测 | - |
+| 3.2 | `tools.ts` | 加载 50+ 个工具（BashTool、FileEditTool 等） | - |
+| 3.3 | `commands.ts` | 加载 100+ 个斜杠命令 | - |
+| 3.4 | `plugins/bundled/` | 初始化内置插件 | - |
+| 3.5 | `skills/bundled/` | 初始化内置技能 | - |
+| 第4层 | `replLauncher.tsx` | 加载 App 和 REPL 组件，渲染终端 UI | App.tsx、REPL.tsx |
+| 4.1 | `components/App.tsx` | 应用外壳：状态管理、主题、上下文 | - |
+| 第5层 | `screens/REPL.tsx` | 交互式界面：输入框、对话流、工具调用展示 | - |
+
+### 调用链对应的代码
+
+```typescript
+// 第1层：dev-entry.ts
+await import('./entrypoints/cli.tsx');
+
+// 第2层：cli.tsx
+const { main: cliMain } = await import('../main.js');
+await cliMain();
+
+// 第3层：main.tsx
+await init();                                    // 3.1 核心初始化
+const tools = getTools();                         // 3.2 工具注册
+const commands = getCommands();                   // 3.3 命令注册
+initBuiltinPlugins();                             // 3.4 插件初始化
+initBundledSkills();                              // 3.5 技能初始化
+await launchRepl(root, appProps, replProps, ...); // 第4层
+
+// 第4层：replLauncher.tsx
+const { App } = await import('./components/App.js');
+const { REPL } = await import('./screens/REPL.js');
+await renderAndRun(root, <App><REPL /></App>);
+
+// 第5层：用户看到的交互式界面
+```
+
+### 快速路径 vs 完整路径
+
+```
+快速路径（如 --version）：
+  dev-entry.ts → cli.tsx → 直接输出 → 退出
+  只加载 2 个文件，不进入第3层
+
+完整路径（交互式）：
+  dev-entry.ts → cli.tsx → main.tsx → init.ts + tools.ts + ... → replLauncher → REPL
+  加载所有层级，进入 REPL 交互
 ```
 
 ---
