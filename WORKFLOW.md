@@ -50,37 +50,37 @@
 - [x] 阶段一：项目结构概览 → [project-structure.md](agents/claude-code/source-code/project-structure.md)
 - [x] 阶段二：入口与启动流程 → [entry-points.md](agents/claude-code/source-code/entry-points.md)
 - [x] 阶段三：核心模块分析 → [core-modules.md](agents/claude-code/source-code/core-modules.md)
-- [ ] 阶段四：关键算法与设计模式 → [key-algorithms.md](agents/claude-code/source-code/key-algorithms.md)
-- [ ] 阶段五：依赖分析 → [dependency-analysis.md](agents/claude-code/source-code/dependency-analysis.md)
+- [x] 阶段四：关键算法与设计模式 → [key-algorithms.md](agents/claude-code/source-code/key-algorithms.md)
+- [x] 阶段五：依赖分析 → [dependency-analysis.md](agents/claude-code/source-code/dependency-analysis.md)
 - 📄 详细流程：[analysis-guide.md](agents/claude-code/source-code/analysis-guide.md)
 
 ### 2.3 架构与能力分析
 
-- [ ] 分析整体架构与模块划分
-- [ ] 分析数据流与状态管理
+- [x] 分析整体架构与模块划分
+- [x] 分析数据流与状态管理
 - [ ] 执行核心能力测试（R1-R5 推理层、A1-A5 行动层、E1-E5 整体执行）
 - [ ] 记录 15 个任务的得分，填写结果记录表
 - 📄 文件：[architecture.md](agents/claude-code/architecture.md)、[core-capabilities.md](agents/claude-code/core-capabilities.md)
 
 ### 2.4 技术实现分析
 
-- [ ] 分析 LLM 集成方式
-- [ ] 分析 Prompt 工程实现
-- [ ] 分析 RAG 与记忆管理机制
-- [ ] 分析错误处理与流式输出
+- [x] 分析 LLM 集成方式
+- [x] 分析 Prompt 工程实现
+- [x] 分析 RAG 与记忆管理机制
+- [x] 分析错误处理与流式输出
 - 📄 文件：[tech-implementation.md](agents/claude-code/tech-implementation.md)
 
 ### 2.5 交互与安全分析
 
-- [ ] 分析 CLI 设计与 IDE 集成
-- [ ] 分析权限控制与确认机制
-- [ ] 分析沙箱隔离与数据隐私保护
+- [x] 分析 CLI 设计与 IDE 集成
+- [x] 分析权限控制与确认机制
+- [x] 分析沙箱隔离与数据隐私保护
 - 📄 文件：[interaction-design.md](agents/claude-code/interaction-design.md)、[security-model.md](agents/claude-code/security-model.md)
 
 ### 2.6 可扩展性与总结
 
-- [ ] 分析插件系统与 MCP 支持
-- [ ] 总结优缺点与适用场景
+- [x] 分析插件系统与 MCP 支持
+- [x] 总结优缺点与适用场景
 - 📄 文件：[extensibility.md](agents/claude-code/extensibility.md)、[pros-cons.md](agents/claude-code/pros-cons.md)
 
 ---
